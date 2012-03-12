@@ -1,0 +1,8 @@
+useDynLib(DetSel)
+
+export(compute.p.values)
+export(draw.detsel.graphs)
+export(genepop.to.detsel)
+export(make.example.files)
+export(read.data)
+export(run.detsel)

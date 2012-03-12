@@ -1,0 +1,16 @@
+7bebd5d6e86f8c928aed12a8547c041a *DESCRIPTION
+8ad5fbe1af743944fd3574c3df51c0ce *NAMESPACE
+41d8dfa065b2f339863dc691c69c2365 *R/DetSel.R
+8c9549ad1707db2ac701844e37ec6771 *R/filled.contour3.R
+b22f3e2fe8f093c7ea42efc4494198c5 *inst/data.dat
+773664c52135da5541f6096fd73f415c *inst/data.gen
+9f971521bea9f11ceaa297aa5425160a *man/DetSel-internal.Rd
+27f529e46a33209fb23d8b5a7adafccf *man/DetSel.Rd
+10dc30212eeeed4f2263a119a171a336 *man/compute.p.values.Rd
+e85f218109382c6859298cc2d3b480bf *man/draw.detsel.graphs.Rd
+8885a43bf31f9a31b1b05be71c09439d *man/genepop.to.detsel.Rd
+0a868af693e228d7a00d39b7b600238b *man/make.example.files.Rd
+0a825b1c9cd0d74d6e4f384490aeb55a *man/read.data.Rd
+c2be8d1b34ec8b90f6b955cea4475f66 *man/run.detsel.Rd
+d4489e9dd7e3800eb8ae0da00c254ea1 *src/GetData.c
+e48b7b60f6deb4bbb964b61d73234f36 *src/SimulDiv.c
