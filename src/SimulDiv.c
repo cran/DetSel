@@ -72,9 +72,10 @@ void SimulDiv(int *p1,int *p2,int *n1,int *n2) {
 	char datafile_name[32];
 	char filename[32];
 	int i,j,iter,totiter,set,nsets,polymorphic,polymorphicsets;
-	int *skip;
+	int *skip = NULL;
 	FILE *outfile,*infile,*out;
-	char X,y[3];
+	char y[8];			// BUG 17-09-2012 (was y[3])
+    int X;
 	Stats S;
 	Data D;
 	Parameters P;
@@ -100,7 +101,7 @@ void SimulDiv(int *p1,int *p2,int *n1,int *n2) {
 	infile = fopen(INFILE, "r");
 	while(!((X = getc(infile)) == '\n' || X == '\f' || X == '\r'));
 	i = j = 0;
-	while (fscanf(infile,"%s %d %d %lf %lf %lf",&datafile_name,&i,&j,&D.F1,&D.F2,&dummy) != EOF) {
+	while (fscanf(infile,"%s %d %d %lf %lf %lf",datafile_name,&i,&j,&D.F1,&D.F2,&dummy) != EOF) {
 		if ((i == pop1) && (j == pop2)) break;
 	}	
 	if ((i == 0) && (j == 0)) {
@@ -202,7 +203,7 @@ void ReadParameterFile(char filename[32],
 
 {
 	FILE *parameters;	
-	char X;
+	int X;
 	int n;
 	
 	parameters = fopen(PARAMETERFILE,"r");
@@ -438,9 +439,9 @@ void NewStatistics(Stats *S,
 	int i,j,k,u;
 	long min,max;
 	double n_c,nsum,nsum2,nbar,xx,yy,q2,q3;
-	double var;
+	double var = 0.0;
 	int recessive,all1,all2,x;
-	int **genotype;
+	int **genotype = NULL;
 	
 	min = 2147483647L;
 	max = -2147483647L;
@@ -546,9 +547,9 @@ void NewStatistics(Stats *S,
 			if (p[2][u] > S -> maf) {
 				S -> maf = p[2][u];
 			}
-			if ((1 - p[2][u]) > S -> maf) {
+/*			if ((1 - p[2][u]) > S -> maf) {			BUG 17-09-2012
 				S -> maf = (1 - p[2][u]);
-			}			
+			}*/			
 		}
 	} else {
 		for (u = 0; u < S -> K[2]; ++u) {
@@ -556,9 +557,9 @@ void NewStatistics(Stats *S,
 			if (p[2][u] > S -> maf) {
 				S -> maf = p[2][u];
 			}
-			if ((1 - p[2][u]) > S -> maf) {
+/*			if ((1 - p[2][u]) > S -> maf) {			BUG 17-09-2012
 				S -> maf = (1 - p[2][u]);
-			}			
+			}*/			
 		}
 	}
 	if (S -> maf <= MAF) {

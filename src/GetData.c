@@ -64,7 +64,7 @@ void ReadParameterFileHeader(char datafile_name[32],
 							 double *B)
 {
 	FILE *parameters;	
-	char X;
+	int X;
 	
 	parameters = fopen(PARAMETERFILE,"r");
 	fscanf(parameters,"%s",datafile_name);
@@ -86,7 +86,7 @@ int ReadData(char datafile_name[32],struct DATA *D)
 
 {
 	FILE *infile;
-	char X;
+	int X;
 	int ByAlleles;
 	int i,j,k,l,m;
 	int dummy,error;
@@ -200,7 +200,7 @@ int Estimate(struct DATA D,
 	double sum_num1,sum_num2,sum_den;
 	double num,num_1,num_2,den,n_c;
 	double yy,q2,q3;
-	double var;
+	double var = 0.0;
 	double **p;
 	
 	double nsum,nsum2,nbar,xx;

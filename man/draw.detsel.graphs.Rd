@@ -1,5 +1,5 @@
 \name{draw.detsel.graphs}
-\Rdversion{1.0}
+\Rdversion{1.0.2}
 \alias{draw.detsel.graphs}
 \title{Plot Graphical Outputs}
 \description{This command plots graphical outputs for DetSel analyses.
@@ -47,6 +47,6 @@ compute.p.values(x.range = c(-1,1),y.range = c(-1,1),n.bins = c(50,50),m = c(3,3
 draw.detsel.graphs(i = 1,j = 2,n.bins = c(50,50),alpha = 0.01,pdf = FALSE) 
 }
 \references{
-	Vitalis, R., Dawson, K., and Boursot, P. (2001) Interpretation of variation across marker loci as evidence of selection, \emph{Genetics} \bold{158}: 1811-1823.
+	Vitalis, R., Dawson, K., and Boursot, P. (2001) Interpretation of variation across marker loci as evidence of selection, \emph{Genetics} \bold{158}: 1811--1823.
 }
 

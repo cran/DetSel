@@ -1,6 +1,5 @@
 Package: DetSel
-Version: 1.0
-Date: 2012-03-12
+Version: 1.0.2
 Title: A computer program to detect markers responding to selection
 Author: Renaud Vitalis <vitalis@supagro.inra.fr>.
 Maintainer: Renaud Vitalis <vitalis@supagro.inra.fr>
@@ -18,6 +17,7 @@ Description: In the new era of population genomics, surveys of genetic
         identify markers that show deviation from neutral expectation
         in pairwise comparisons of diverging populations.
 License: GPL (>= 2)
-Packaged: 2012-03-12 15:16:34 UTC; Renaud
+Packaged: 2013-04-24 06:48:46 UTC; Renaud
+NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2012-03-30 10:14:50
+Date/Publication: 2013-04-24 09:38:17

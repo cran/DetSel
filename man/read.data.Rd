@@ -1,5 +1,5 @@
 \name{read.data}
-\Rdversion{1.0}
+\Rdversion{1.0.2}
 \alias{read.data}
 \title{Read Data}
 \description{
@@ -48,8 +48,8 @@ make.example.files()
 read.data(infile = 'data.dat',dominance = FALSE,maf = 0.99)
 }
 \references{
-Weir, B. S., and Cockerham, C. C. (1984) Estimating F-statistics for the analysis of population structure, \emph{Evolution} \bold{38}: 1358-1370.
+Weir, B. S., and Cockerham, C. C. (1984) Estimating F-statistics for the analysis of population structure, \emph{Evolution} \bold{38}: 1358--1370.
 
-Zhivotovsky, L. A. (1999) Estimating population structure in diploids with multilocus dominant DNA markers, \emph{Molecular Ecology} \bold{8}, 907-913
+Zhivotovsky, L. A. (1999) Estimating population structure in diploids with multilocus dominant DNA markers, \emph{Molecular Ecology} \bold{8}, 907--913
 }
 
