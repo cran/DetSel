@@ -351,7 +351,7 @@ draw.single.detsel.graph <- function(i,j,x.range,y.range,n.bins,m,alpha,pdf,outl
 	for (l in 1:length(nall)) {
 		x <- cbind(data[,1][data[,5] == nall[l]],data[,2][data[,5] == nall[l]])
 		h <- make.2D.histogram(x,a,b,n.bins)
-		f <- ash2(h,m)
+		f <- ash::ash2(h,m)
 		hist <- f$z / sum(f$z)
 		freq <- cumulative.distribution.of.probabilities(hist)
 		prob <- cbind(freq[,1],(freq[,2] <= q) * q)
@@ -464,7 +464,7 @@ compute.p.values <- function(x.range = c(-1,1),y.range = c(-1,1),n.bins = c(100,
 							nid <- plotfile[pos[plotfile[pos,5] == nall[l]],6]
 							if (dim(raw)[1] > 0) {
 								h <- make.2D.histogram(raw,a,b,n.bins)
-								f <- ash2(h,m)
+								f <- ash::ash2(h,m)
 								hist <- f$z / sum(f$z)
 								freq <- cumulative.distribution.of.probabilities(hist)
 								d <- (b - a) / (n.bins - 1)

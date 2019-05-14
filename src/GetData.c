@@ -316,7 +316,7 @@ void WriteOutputs(struct DATA D,
 	int cpt;
 	char OutFileName[32];
 	char PlotFileName[32];
-	char x[3];
+	char x[12];
 	FILE *outfile,*plotfile,*samplesize;
 	
 	samplesize = fopen(SAMPLESIZE,"w");

@@ -1,7 +1,7 @@
-f5d1ada3018b5402b8680b7b9aa752c1 *ChangeLog
-87a7e93e5fe72c558795981ddaa8f6d4 *DESCRIPTION
-8ad5fbe1af743944fd3574c3df51c0ce *NAMESPACE
-78e32a04e0ba20b0001b75d347018565 *R/DetSel.R
+232b2ae23df8265fcba0b20b282b2b29 *ChangeLog
+2a18b7c645c478d86724492bf9c1bded *DESCRIPTION
+67bff52f7bb3502b1796417830371d27 *NAMESPACE
+555d22077e7d6e211af03dd72764aa31 *R/DetSel.R
 8c9549ad1707db2ac701844e37ec6771 *R/filled.contour3.R
 b22f3e2fe8f093c7ea42efc4494198c5 *inst/data.dat
 773664c52135da5541f6096fd73f415c *inst/data.gen
@@ -13,5 +13,6 @@ efc2bf2ac8383018a47c83d825e858db *man/genepop.to.detsel.Rd
 d4de4b1cdf3335f55d24d5cb7d8642bf *man/make.example.files.Rd
 224ddc24539ed99c59d09997299e4abd *man/read.data.Rd
 b5ce347f478f595272ae2ba284e67c67 *man/run.detsel.Rd
-986997405ed3edf62bfc5b5129ee0681 *src/GetData.c
+6ab40dee67752ce639e1077d61c17b80 *src/DetSel_init.c
+958269a884b2efe94f06e3a992d610e8 *src/GetData.c
 5389a9c3eb10bc93b9a628112016bf12 *src/SimulDiv.c

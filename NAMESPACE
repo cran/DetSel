@@ -1,4 +1,4 @@
-useDynLib(DetSel)
+useDynLib(DetSel, .registration = TRUE, .fixes = "C_")
 
 export(compute.p.values)
 export(draw.detsel.graphs)
@@ -6,3 +6,7 @@ export(genepop.to.detsel)
 export(make.example.files)
 export(read.data)
 export(run.detsel)
+importFrom("grDevices", "cm.colors", "dev.new", "dev.off", "grey")
+importFrom("graphics", ".filled.contour", "Axis", "box", "par",
+           "plot.new", "plot.window", "points", "text", "title")
+importFrom("utils", "flush.console", "read.table", "write.table")
