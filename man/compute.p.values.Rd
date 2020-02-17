@@ -1,5 +1,5 @@
 \name{compute.p.values}
-\Rdversion{1.0.2}
+\Rdversion{1.0.4}
 \alias{compute.p.values}
 \title{Compute Empirical p-values}
 \description{This command compute empirical p-values.
@@ -36,6 +36,9 @@ run.detsel(example = TRUE)
 ## in both dimensions, a grid of 50 x 50 bins, and a smoothing parameter m = 3
 ## in both dimensions.
 compute.p.values(x.range = c(-1,1),y.range = c(-1,1),n.bins = c(50,50),m = c(3,3))
+
+## This is to clean up the working directory.
+remove.example.files()
 }
 \references{
 	Scott, D. W. (1992) Multivariate density estimation: theory, practice, and visualization, John Wiley, New York.

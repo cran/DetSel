@@ -1,5 +1,5 @@
 \name{read.data}
-\Rdversion{1.0.2}
+\Rdversion{1.0.4}
 \alias{read.data}
 \title{Read Data}
 \description{
@@ -46,6 +46,9 @@ make.example.files()
 ## marker loci in the observed and simulated datasets that have an allele with
 ## frequency larger than 0.99).
 read.data(infile = 'data.dat',dominance = FALSE,maf = 0.99)
+
+## This is to clean up the working directory.
+remove.example.files()
 }
 \references{
 Weir, B. S., and Cockerham, C. C. (1984) Estimating F-statistics for the analysis of population structure, \emph{Evolution} \bold{38}: 1358--1370.

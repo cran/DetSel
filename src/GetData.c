@@ -64,19 +64,29 @@ void ReadParameterFileHeader(char datafile_name[32],
 							 double *B)
 {
 	FILE *parameters;	
-	int X;
+	int error,X;
 	
 	parameters = fopen(PARAMETERFILE,"r");
-	fscanf(parameters,"%s",datafile_name);
-	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	fscanf(parameters,"%d",dominance);
-	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	fscanf(parameters,"%lf",lMAF);
-	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+  if ((error = fscanf(parameters,"%s",datafile_name)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
+  while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+  if ((error = fscanf(parameters,"%d",dominance)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
+  while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+  if ((error = fscanf(parameters,"%lf",lMAF)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
+  while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
 	if (*dominance) {
-		fscanf(parameters,"%lf",A);
-		while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-		fscanf(parameters,"%lf",B);
+    if ((error = fscanf(parameters,"%lf",A)) == 0 || error == EOF) {
+      Rprintf("STOPPED: problem reading parameter file...\n");
+    }
+    while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+    if ((error = fscanf(parameters,"%lf",B)) == 0 || error == EOF) {
+      Rprintf("STOPPED: problem reading parameter file...\n");
+    }
 	}
 	fclose(parameters);
 }	

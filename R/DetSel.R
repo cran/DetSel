@@ -3,6 +3,13 @@ make.example.files <- function() {
 	file.copy(system.file('data.gen',package='DetSel'),'data.gen')
 }
 
+remove.example.files <- function() {
+	detsel.example.files <- c("P-values_1_2.dat","Pair_1_2_50_50.dat","data-converted.dat","data.dat","data.gen","infile.dat","out.dat","parameters.dat","plot_1_2.dat","sample_sizes.dat")
+	for (file in detsel.example.files) {
+		if (file.exists(file)) file.remove(file)
+	}
+}
+
 GetData <- function() {
 	.C('GetData',PACKAGE = 'DetSel')
 }

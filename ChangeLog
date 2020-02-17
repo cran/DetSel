@@ -1,3 +1,7 @@
+1.0.4
+
+- Fixed some minor issues in GetData and SimulDiv (internal functions) that caused several warnings at compilation time
+
 1.0.3
 
 - Fixed some minor bugs in GetData and SimulDiv (internal functions) that caused several warnings using gcc 8.3

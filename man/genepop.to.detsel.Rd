@@ -1,5 +1,5 @@
 \name{genepop.to.detsel}
-\Rdversion{1.0.2}
+\Rdversion{1.0.4}
 \alias{genepop.to.detsel}
 \title{Convert Input File}
 \description{This command converts a data file in Genepop format (see Raymond and Rousset 1995; Rousset 2007), which name can be specified using the infile argument into a data file in DetSel format, which name can be specified using the outfile argument.
@@ -35,9 +35,13 @@ The output file is saved in the working directory.
 \examples{
 ## This is to generate an example file in the working directory.
 make.example.files()
+
 ## This is to convert the example file in genepop format named 'genepop.dat',
 ## into a file in DetSel format named 'converted_data.dat'
 genepop.to.detsel(infile = 'data.gen',outfile = 'data-converted.dat')
+
+## This is to clean up the working directory.
+remove.example.files()
 }
 \references{
 Raymond, M., and Rousset, F. (1995) Genepop (version 1.2): population genetics software for exact tests and ecumenicism, \emph{Journal of Heredity} \bold{86}: 248--249.

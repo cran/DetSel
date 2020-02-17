@@ -203,29 +203,43 @@ void ReadParameterFile(char filename[32],
 
 {
 	FILE *parameters;	
-	int X;
-	int n;
+	int error,n,X;
 	
 	parameters = fopen(PARAMETERFILE,"r");
-	fscanf(parameters,"%s",filename);
+  if ((error = fscanf(parameters,"%s",filename)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
+  while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+  if ((error = fscanf(parameters,"%d",dominance)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
 	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	fscanf(parameters,"%d",dominance);
+  if ((error = fscanf(parameters,"%lf",MAF)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
 	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	fscanf(parameters,"%lf",MAF);
+  if (*dominance) {
+    if ((error = fscanf(parameters,"%lf",A)) == 0 || error == EOF) {
+      Rprintf("STOPPED: problem reading parameter file...\n");
+    }
+    while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+    if ((error = fscanf(parameters,"%lf",B)) == 0 || error == EOF) {
+      Rprintf("STOPPED: problem reading parameter file...\n");
+    }
+  }
+  if ((error = fscanf(parameters,"%d",totiter)) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
 	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	if (*dominance) {
-		fscanf(parameters,"%lf",A);
-		while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-		fscanf(parameters,"%lf",B);
-		while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	}
-	fscanf(parameters,"%d",totiter);
-	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
-	fscanf(parameters,"%lf",&(P -> mubar));
-	while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+  if ((error = fscanf(parameters,"%lf",&(P -> mubar))) == 0 || error == EOF) {
+    Rprintf("STOPPED: problem reading parameter file...\n");
+  }
+  while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
 	if (!(*dominance)) {
-		fscanf(parameters,"%d",MUTMOD);
-		while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
+    if ((error = fscanf(parameters,"%d",MUTMOD)) == 0 || error == EOF) {
+      Rprintf("STOPPED: problem reading parameter file...\n");
+    }
+    while(!((X = getc(parameters)) == '\n' || X == '\f' || X == '\r'));
 	} else {
 		*MUTMOD = 2;
 	}
